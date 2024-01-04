@@ -70,4 +70,78 @@ public class TestClass {
         String s23 = "java";
         assertEquals("java", lcs.longestCommonSubstring(s13, s23));
     }
+
+    // 67. 不同路径
+    @Test
+    public void testUniquePaths() {
+        BM67NumberDifferentPaths bm67NumberDifferentPaths = new BM67NumberDifferentPaths();
+
+        // Test case 1
+        int m1 = 1;
+        int n1 = 1;
+        int expected1 = 1;
+        int result1 = bm67NumberDifferentPaths.uniquePaths(m1, n1);
+        assertEquals(expected1, result1);
+
+        // Test case 2
+        int m2 = 2;
+        int n2 = 2;
+        int expected2 = 2;
+        int result2 = bm67NumberDifferentPaths.uniquePaths(m2, n2);
+        assertEquals(expected2, result2);
+
+        // Test case 3
+        int m3 = 3;
+        int n3 = 3;
+        int expected3 = 6;
+        int result3 = bm67NumberDifferentPaths.uniquePaths(m3, n3);
+        assertEquals(expected3, result3);
+    }
+
+    // 68. 最小路径和
+    @Test
+    public void testMinPathSum() {
+        // Test case 1
+        int[][] matrix1 = {{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
+        int expected1 = 7;
+        BM68MinPathSumMatrix solution1 = new BM68MinPathSumMatrix();
+        int result1 = solution1.minPathSum(matrix1);
+        assertEquals(expected1, result1);
+
+        // Test case 2
+        int[][] matrix2 = {{3}};
+        int expected2 = 3;
+        BM68MinPathSumMatrix solution2 = new BM68MinPathSumMatrix();
+        int result2 = solution2.minPathSum(matrix2);
+        assertEquals(expected2, result2);
+
+        // Test case 3
+        int[][] matrix3 = {{2, 2}, {3, 3}, {4, 4}, {5, 5}, {6, 6}, {7, 7}, {8, 8}, {9, 9}, {10, 10}};
+        int expected3 = 56;
+        BM68MinPathSumMatrix solution3 = new BM68MinPathSumMatrix();
+        int result3 = solution3.minPathSum(matrix3);
+        assertEquals(expected3, result3);
+    }
+
+    @Test
+    public void testNum2Letters() {
+        BM69Num2Letters converter = new BM69Num2Letters();
+        // Test case 1
+        String nums1 = "12298";
+        int expected1 = 3;
+        int result1 = converter.num2Letters(nums1);
+        assertEquals(expected1, result1);
+
+        // Test case 2
+        String nums2 = "31717126241541717";
+        int expected2 = 192;
+        int result2 = converter.num2Letters(nums2);
+        assertEquals(expected2, result2);
+
+        // Test case 3
+        String nums4 = "13579";
+        int expected4 = 2;
+        int result4 = converter.num2Letters(nums4);
+        assertEquals(expected4, result4);
+    }
 }
