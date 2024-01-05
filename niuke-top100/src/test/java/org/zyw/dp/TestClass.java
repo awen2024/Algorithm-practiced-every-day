@@ -3,7 +3,6 @@ package org.zyw.dp;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public class TestClass {
     // 63. 跳台阶
     @Test
@@ -143,5 +142,60 @@ public class TestClass {
         int expected4 = 2;
         int result4 = converter.num2Letters(nums4);
         assertEquals(expected4, result4);
+    }
+
+    // 70. 零钱兑换
+    @Test
+    public void testExchangeChange() {
+        BM70ExchangeChange exchangeChange = new BM70ExchangeChange();
+
+        // Test case 1
+        int[] coins1 = {1, 2, 5};
+        int amount1 = 11;
+        int expected1 = 3;
+        int result1 = exchangeChange.exchangeChange(coins1, amount1);
+        assertEquals(expected1, result1);
+
+        // Test case 2
+        int[] coins2 = {2, 3, 4, 5};
+        int amount2 = 15;
+        int expected2 = 3;
+        int result2 = exchangeChange.exchangeChange(coins2, amount2);
+        assertEquals(expected2, result2);
+
+        // Test case 3
+        int[] coins3 = {1};
+        int amount3 = 0;
+        int expected3 = 0;
+        int result3 = exchangeChange.exchangeChange(coins3, amount3);
+        assertEquals(expected3, result3);
+
+        // Test case 4
+        int[] coins4 = {3,  5};
+        int amount4 = 2;
+        int expected4 = -1;
+        int result4 = exchangeChange.exchangeChange(coins4, amount4);
+        assertEquals(expected4, result4);
+    }
+    // 71. 最大升序子序列
+    @Test
+    public void testMaxAscSubseq() {
+        BM71MaxAscSubsequence maxAscSubseq = new BM71MaxAscSubsequence();
+
+        // Test case 1
+        int[] arr1 = {1, 2, 3, 4, 5};
+        assertEquals(5, maxAscSubseq.maxAscSubseq(arr1));
+
+        // Test case 2
+        int[] arr2 = {5, 4, 3, 2, 1};
+        assertEquals(1, maxAscSubseq.maxAscSubseq(arr2));
+
+        // Test case 3
+        int[] arr3 = {1, 3, 2, 4, 5};
+        assertEquals(4, maxAscSubseq.maxAscSubseq(arr3));
+
+        // Test case 4
+        int[] arr4 = {};
+        assertEquals(0, maxAscSubseq.maxAscSubseq(arr4));
     }
 }
