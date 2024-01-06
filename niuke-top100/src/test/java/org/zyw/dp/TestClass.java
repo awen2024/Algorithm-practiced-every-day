@@ -198,4 +198,42 @@ public class TestClass {
         int[] arr4 = {};
         assertEquals(0, maxAscSubseq.maxAscSubseq(arr4));
     }
+
+    @Test
+    public void testFindGreatestSumOfSubArray() {
+        BM72MaxSumConsecutiveSubarrays bm72MaxSumConsecutiveSubarrays = new BM72MaxSumConsecutiveSubarrays();
+
+        int[] array1 = {1, 2, -3, 4, 5, -6, 7};
+        int result1 = bm72MaxSumConsecutiveSubarrays.FindGreatestSumOfSubArray(array1);
+        assertEquals(10, result1);
+
+        int[] array2 = {0, 0, 0, 0, 0, 0};
+        int result2 = bm72MaxSumConsecutiveSubarrays.FindGreatestSumOfSubArray(array2);
+        assertEquals(0, result2);
+
+        int[] array3 = {-10, -20, -30, -40, -50};
+        int result3 = bm72MaxSumConsecutiveSubarrays.FindGreatestSumOfSubArray(array3);
+        assertEquals(-10, result3);
+    }
+
+    @Test
+    public void testGetLongestPalindrome() {
+        BM73LongestPalindromeSubstring palindrome = new BM73LongestPalindromeSubstring();
+
+        String A1 = "abcd";
+        int result1 = palindrome.getLongestPalindrome(A1);
+        assertEquals(1, result1);
+
+        String A2 = "abccba";
+        int result2 = palindrome.getLongestPalindrome(A2);
+        assertEquals(6, result2);
+
+        String A3 = "aaa";
+        int result3 = palindrome.getLongestPalindrome(A3);
+        assertEquals(3, result3);
+
+        String A4 = "bb";
+        int result4 = palindrome.getLongestPalindrome(A4);
+        assertEquals(2, result4);
+    }
 }
