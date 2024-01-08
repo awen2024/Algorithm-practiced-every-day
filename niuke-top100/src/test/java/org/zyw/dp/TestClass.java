@@ -2,6 +2,8 @@ package org.zyw.dp;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TestClass {
     // 63. 跳台阶
@@ -215,7 +217,7 @@ public class TestClass {
         int result3 = bm72MaxSumConsecutiveSubarrays.FindGreatestSumOfSubArray(array3);
         assertEquals(-10, result3);
     }
-
+    // 73. 最长回文子串
     @Test
     public void testGetLongestPalindrome() {
         BM73LongestPalindromeSubstring palindrome = new BM73LongestPalindromeSubstring();
@@ -235,5 +237,37 @@ public class TestClass {
         String A4 = "bb";
         int result4 = palindrome.getLongestPalindrome(A4);
         assertEquals(2, result4);
+    }
+
+    // 74. 数字字符串转化为IP地址
+    @Test
+    public void testRestoreIpAddresses() {
+        BM74Numericstr2IP ip = new BM74Numericstr2IP();
+
+        // Test case 1
+        String s1 = "25525511135";
+        ArrayList<String> expected1 = new ArrayList<>();
+        expected1.add("255.255.11.135");
+        expected1.add("255.255.111.35");
+        assertEquals(expected1, ip.restoreIpAddresses(s1));
+
+        // Test case 2
+        String s2 = "010010";
+        ArrayList<String> expected2 = new ArrayList<>();
+        expected2.add("0.100.1.0");
+        expected2.add("0.10.0.10");
+        assertEquals(expected2, ip.restoreIpAddresses(s2));
+
+        // Test case 3
+        String s3 = "1111";
+        ArrayList<String> expected3 = new ArrayList<>();
+        expected3.add("1.1.1.1");
+        assertEquals(expected3, ip.restoreIpAddresses(s3));
+
+        // Test case 4
+        String s4 = "030303";
+        ArrayList<String> expected4 = new ArrayList<>();
+        expected4.add("0.30.30.3");
+        assertEquals(expected4, ip.restoreIpAddresses(s4));
     }
 }
